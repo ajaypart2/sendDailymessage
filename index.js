@@ -43,6 +43,12 @@ client.on('ready', () => {
     });
 });
 
+client.on('message_create', message => {
+	if (message.body === '!pingischeckingtheserviceisrunnig') {
+		client.sendMessage(message.from, 'pong');
+	}
+});
+
 function sendMessageTask(){
     sendMessage("Dawai le le *Vitamin B* ki agar le li to thik hai, nahi to lele.");
 }
